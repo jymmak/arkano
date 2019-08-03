@@ -1,0 +1,16 @@
+<div id="headboard-page">
+    <div class="wrapper border-bottom white-bg page-heading ng-scope">
+
+        <ol class="breadcrumbb">
+            <ng-container *ngFor="let link of links;let index = index;">
+                <li [ngClass]="{active: links.length == (index + 1) }">
+                    <a *ngIf="links.length != (index + 1)" [routerLink]="[link.link]"><strong>{{link.titulo}}</strong></a>
+                    <span *ngIf="links.length == (index + 1)" style="
+                        margin-left: 4px;
+                    ">/{{link.subtitulo}}</span>
+                </li>
+            </ng-container>
+        </ol>
+
+    </div>
+</div>

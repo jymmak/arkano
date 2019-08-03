@@ -1,0 +1,25 @@
+/* WRAPPERS */
+#wrapper {
+  width: 100%;
+  overflow-x: hidden;
+
+}
+.wrapper {
+  padding: 0 20px;
+}
+.wrapper-content {
+  padding: 20px 10px 40px;
+}
+
+#page-wrapper {
+
+}
+
+@media (min-width: 768px) {
+}
+
+/* BACKGROUNDS */
+.gray-bg,
+.bg-muted {
+  background-color: $dark-ligth;
+}

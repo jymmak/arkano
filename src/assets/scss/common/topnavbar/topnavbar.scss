@@ -1,0 +1,14 @@
+#topnavbar {
+    width: $control-width;
+    position: absolute;
+    background-color: $blue;
+    z-index: 2001;
+   
+    h1{
+        color: $white;
+    }
+    .btn-bars{
+        color: $white;
+    }
+}
+ 
