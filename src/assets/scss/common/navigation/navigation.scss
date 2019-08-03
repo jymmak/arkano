@@ -1,8 +1,12 @@
 #navigation {
-  position: absolute;
+  // position: absolute;
   background-color: $dark;
   min-height: 800px;
   align-content: center;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  width: 20% !important;
+
 
   /* MENU */
   ul {

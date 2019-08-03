@@ -12,6 +12,11 @@
 }
 
 #page-wrapper {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  width: 80% !important;
+  position: absolute;
+  min-height: 800px!important;
 
 }
 
