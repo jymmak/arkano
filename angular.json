@@ -29,12 +29,17 @@
             ],
             "styles": [
               "src/styles.scss"
+     
+    
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/vendor/pace/pace.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/toastr/build/toastr.min.js"
+            
+            
             ]
           },
           "configurations": {

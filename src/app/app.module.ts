@@ -9,9 +9,7 @@ import {ROUTES} from "./app.routes";
 import { AppComponent } from './app.component';
 
 // App views
-
-import {dashboardModule} from "./views/dashbord/dashboard.module";
-
+import {dashboardModule} from "./views/dashboard/dashboard.module";
 
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
@@ -24,6 +22,7 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
     // Angular modules
     BrowserModule,
     HttpModule,
+    
 
     // Views
   
