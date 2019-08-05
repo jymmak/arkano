@@ -13,18 +13,41 @@ export class dashboardComponent implements OnInit, AfterViewInit  {
     public title: string
     public subtitle: string
     public listCards: Array<any>;
- 
+    public dashboardForm: FormGroup;
+   
 
     constructor(private router: Router) {
 
-    }
-
-    ngOnInit() {
     
+    }
+    initForm() {
+        this.dashboardForm= new FormGroup({
+            cantidadCompras: new FormControl("", [Validators.required]),
+            incrementoCompras: new FormControl("", [Validators.required]),
+            cantidadNuevosUsuarios: new FormControl("", [Validators.required]),
+            cantidadNuevasVisitas: new FormControl("", [Validators.required])
+            
+        });
+
+    }
+    dashboard(){
+        $("#dashboardModal").modal("hide");
+        let data: any = {
+            cantidadCompras: this.dashboardForm.get('cantidadCompras').value,
+            incrementoCompras: this.dashboardForm.get('incrementoCompras').value,
+            cantidadNuevosUsuarios: this.dashboardForm.get('cantidadNuevosUsuarios').value,
+            cantidadNuevasVisitas: this.dashboardForm.get('cantidadNuevasVisitas').value
+        };
+        console.log(data)
+    }
+    ngOnInit() {
+   
+        this.initForm();
         this.title = 'Dashboard';
         this.subtitle = 'Estadísticas';
         this.listCards = [
             {
+                id:1,
                 icon: 'fa fa-shopping-bag',
                 count: 150,
                 desc: 'Nuevas Compras',
@@ -34,6 +57,7 @@ export class dashboardComponent implements OnInit, AfterViewInit  {
                 moreColor: '#258fd7'
             },
             {
+                id:2,
                 icon: 'fa fa-bar-chart',
                 count: '53%',
                 desc: 'Incremento de Compras',
@@ -43,6 +67,7 @@ export class dashboardComponent implements OnInit, AfterViewInit  {
                 moreColor: '#0d730d'
             },
             {
+                id:3,
                 icon: 'fa fa-user-plus',
                 count: 44,
                 desc: 'Nuevos Usuarios',
@@ -52,6 +77,7 @@ export class dashboardComponent implements OnInit, AfterViewInit  {
                 moreColor: '#B27D0B'
             },
             {
+                id:4,
                 icon: 'fa fa-pie-chart',
                 count: 65,
                 desc: 'Nuevas Visitas',
@@ -70,7 +96,7 @@ export class dashboardComponent implements OnInit, AfterViewInit  {
     }
 
     ngAfterViewInit() {
-   
+      
     }
 
 }

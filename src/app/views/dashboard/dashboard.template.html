@@ -9,7 +9,7 @@
             <!-- END TITLE-->
             <!-- BEGIN  BUTTON-->
             <button class="btn btn-info d-inline float-right" type="button" data-toggle="modal"
-                data-target="#exampleModal"><i class="fa fa-plus"></i>&nbsp;&nbsp;<span
+                data-target="#dashboardModal"><i class="fa fa-plus"></i>&nbsp;&nbsp;<span
                     class="bold">Nuevo</span></button>
             <!-- END BUTTON-->
 
@@ -19,7 +19,7 @@
     <!-- BEGIN DASHBOARD-->
 
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let item of listCards">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let item of listCards;let index = index;">
             <div class="dashboard-stat" [ngStyle]="{'background-color': item.colorCard }">
                 <div class=" px-2">
                     <div class="visual">
@@ -32,7 +32,7 @@
                         <div class="desc">{{item.desc}} </div>
                     </div>
                 </div>
-                <a class="more" href="javascript:;" [ngStyle]="{'background-color': item.moreColor}">{{item.more}}
+                <a class="more" [routerLink]="" [ngStyle]="{'background-color': item.moreColor}">{{item.more}}
                     <i [class]="item.arrow"></i>
                 </a>
             </div>
@@ -44,7 +44,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade mt-3" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade mt-3" id="dashboardModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -54,32 +54,38 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-
-
-                    <div class="form-group">
-                        <div class="ibox-content">
-                            <div class="">
-                                <div class="row ">
-                                    <div class="col-sm-12 mb-3">
-                                        <label>Cantidad de nuevas compras</label>
-                                        <input class="form-control spinner" type="text" placeholder="Nuevas compras">
-                                    </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <label>Incremento de Compras</label>
-                                        <input class="form-control spinner" type="text"
-                                            placeholder="%Incremento de Compras">
-                                    </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <label>Cantidad de nuevos Usuarios</label>
-                                        <input class="form-control spinner" type="text" placeholder="Nuevos Usuarios">
-                                    </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <label>Cantidad de Nuevas Visitas</label>
-                                        <input class="form-control spinner" type="text" placeholder="Nuevas Visitas">
-                                    </div>
-                                    <div class="col-sm-12 mb-3">
-                                        <!-- <label>Fecha</label>
+                <form #formAddDashboard="ngForm" [formGroup]="dashboardForm" (ngSubmit)="dasboard()">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="ibox-content">
+                                <div class="">
+                                    <div class="row ">
+                                        <div class="col-sm-12 mb-3">
+                                            <label>Cantidad de nuevas compras</label>
+                                            <input class="form-control" name="cantidadCompras" type="text"
+                                                placeholder="Nuevas compras" formControlName="cantidadCompras"
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="col-sm-12 mb-3">
+                                            <label>Incremento de Compras</label>
+                                            <input class="form-control" name="incrementoCompras" type="text"
+                                                placeholder="%Incremento de Compras" formControlName="incrementoCompras"
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="col-sm-12 mb-3">
+                                            <label>Cantidad de nuevos Usuarios</label>
+                                            <input class="form-control" name="cantidadNuevosUsuarios" type="text"
+                                                placeholder="Nuevos Usuarios" formControlName="cantidadNuevosUsuarios"
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="col-sm-12 mb-3">
+                                            <label>Cantidad de Nuevas Visitas</label>
+                                            <input class="form-control" name="cantidadNuevasVisitas" type="text"
+                                                placeholder="Nuevas Visitas" formControlName="cantidadNuevasVisitas"
+                                                autocomplete="off">
+                                        </div>
+                                        <div class="col-sm-12 mb-3">
+                                            <!-- <label>Fecha</label>
                                         <div class="input-group date date-picker" data-date-format="dd-mm-yyyy">
                                             <input type="text" class="form-control" readonly="" name="datepicker">
                                             <span class="input-group-btn">
@@ -88,18 +94,19 @@
                                                 </button>
                                             </span>
                                         </div> -->
+                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
-
-
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
+                    <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary">Ingresar Datos</button>
-                </div>
+                        <button type="button" class="btn btn-primary" (click)="dashboard()">Ingresar Datos</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

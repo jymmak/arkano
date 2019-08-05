@@ -123,10 +123,23 @@
     color: #666;
   }
 
-  .form-group{
-    label{
-      color:#212529;
+  .form-group {
+    label {
+      color: #212529;
       font-weight: 700;
+    }
+    .help-block {
+      color: #e73d4a;
+    }
+    .help-block {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .help-block {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #737373;
     }
   }
 }
