@@ -10,6 +10,16 @@
 
     <ul>
       <li class="title"> <a [routerLink]="">MAIN NAVIGATION</a></li>
+      <li>
+        <div class="text-left">
+          <form (submit)="submitLocation(cityName)">
+            <input type="text" placeholder="Ciudad" class="form-control" autofocus #cityName>
+          </form>
+          <p class="mt-1">Ciudad: {{weather.city.name}}</p>
+          <p>Temperatura:{{weather.list[0].main.temp}}°C</p>
+
+        </div>
+      </li>
       <ul class="menu">
         <li>
 
@@ -23,6 +33,14 @@
           <li><a [routerLink]="">dashboard 2</a></li>
           <li><a [routerLink]="">dashboard 3</a></li>
         </ul>
+
+
+
+
+        <!-- <a [routerLink]=""> <i class="fa fa-temperature-high fa-fw" aria-hidden="true"></i><span>Dashboard</span>
+            
+              </a> -->
+
       </ul>
     </ul>
 
