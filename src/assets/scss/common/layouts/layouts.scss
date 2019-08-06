@@ -1,8 +1,7 @@
 /* WRAPPERS */
 #wrapper {
-  width: 100%;
+  width: $control-width;
   overflow-x: hidden;
-
 }
 .wrapper {
   padding: 0 20px;
@@ -26,5 +25,5 @@
 /* BACKGROUNDS */
 .gray-bg,
 .bg-muted {
-  background-color: $dark-ligth;
+  background-color: $gray-ligth;
 }

@@ -1,13 +1,12 @@
 #headboard-page {
   margin: 0;
- 
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
+   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.07);
   z-index: 2001;
   position: absolute;
-  width: 100%;
+  width: $control-width;
 
   .white-bg {
-    background-color: #ffffff;
+    background-color: $white;
   }
   .page-heading {
     .breadcrumbb {
@@ -16,14 +15,14 @@
       padding: 0.17rem 1rem;
       margin-bottom: 0.5em;
       list-style: none;
-      border-radius: 0.25rem;
+      border-radius: $radius;
       font-size: 0.8em;
       li {
-        color: #707070;
+        color: $gray1;
         margin-top: 8px;
 
         a {
-          color: #707070;
+          color: $gray1;
           text-decoration: none;
         }
       }
